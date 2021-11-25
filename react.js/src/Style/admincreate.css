@@ -1,0 +1,51 @@
+
+
+.create-class{
+    width: 100%;
+    color: dodgerblue;
+    text-align: center;
+    margin: 3rem  0;
+    font-weight: 300;
+    font-size: xx-large;
+
+}
+#blockno-class,#roomno-class,#capacity-class{
+    box-sizing: border-box;
+    color: black;
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    
+    margin-bottom: 25px;
+    
+    
+}
+#blockno-class{
+    border: none;
+    outline: none;
+    border-bottom: 2px dodgerblue solid;
+    background: transparent;
+
+}
+#roomno-class,#capacity-class{
+    border: none;
+    outline: none;
+    border-bottom: 2px dodgerblue solid;
+    background: transparent;
+
+}
+#submit{
+    background-color: dodgerblue;
+    opacity: 0.8;
+    border: none;
+    outline: none;
+    opacity: 1.5;
+    padding: 0;
+    color: white;
+    line-height: 38px;
+}
+#submit:hover{
+    font-size: 22px;
+}
+
+

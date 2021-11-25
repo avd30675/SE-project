@@ -23,7 +23,7 @@ var view = new Schema1({
         type:Number,
         required:true
     },
-    booking:[bookingsschema]   
+    bookings:[bookingsschema]   
 
     
 });

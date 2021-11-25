@@ -1,12 +1,11 @@
-const pointer = require("../../../model/adminclassroom")
+const { response } = require("express");
+const pointer = require("../../../model/adminseminar")
 
-exports.classbook = (req, res) => {
-    
-    const class_id = req.body.classroom;
+exports.seminarbook = (req, res) => {
+
+    const hall_id = req.body.hall;
     const b_start = req.body.start;
-    
     const b_end = req.body.end;
-
     const userid = req.body.user;
     var i=1;
 
@@ -18,9 +17,10 @@ exports.classbook = (req, res) => {
                 et.setHours(et.getHours()+5);
                 et.setMinutes(et.getMinutes()+30);
     
-    pointer.classroom.findOne({ _id: class_id }).then(response => {
+    pointer.seminar.findOne({ _id: hall_id }).then(response => {
         
-        
+        console.log("enetr");
+        console.log(response);
         if(response.bookings[0]==''){
             const book = new pointer.seminarbooking({
                     user_name: userid,
@@ -29,41 +29,41 @@ exports.classbook = (req, res) => {
                  });
                 book.save();
             response.bookings[0]=book ;
+
+             response.save().then(()=>{
+                console.log("true");
+               }).catch((err)=>{
+                  console.log(err);
+             })
         }
 
         else{
            const starttime=st.getTime();
             const endtime=et.getTime();
-            const curtime= new Date().getTime();
+            const curtime=new Date().getTime();
             response.bookings.forEach(element => {
                   const start=new Date(element.start).getTime();
                   const end=new Date(element.end).getTime();
-                  if((starttime>=start && starttime<=end) || (endtime>=start && endtime<=end)  ) {
+                  if((starttime>=start && starttime<=end) || (endtime>=start && endtime<=end)) {
                       i=0;
                   }
             });
-            if(endtime-starttime<1800000 || starttime-curtime<1800000 || endtime-starttime>10900000){
+            if(endtime-starttime<1800000 || starttime-curtime<1800000 || endtime-starttime>15000000){
                 i=0;
             }
-        
-
             if(i==1){
-                
-                
-                const book = new pointer.classbooking({
+                const book = new pointer.seminarbooking({
                     user_name: userid,
                     start: st,
                     end: et
                  });
-                console.log(book);
                 book.save();
-                console.log(book);
                 response.bookings.push(book);
                 response.save().then(()=>{
-                       console.log("true");
-                  }).catch((err)=>{
-                  console.log(err);
-                })
+            console.log("true");
+        }).catch((err)=>{
+            console.log(err);
+        })
             }
             
 
@@ -80,6 +80,3 @@ exports.classbook = (req, res) => {
     });
 
 }
-
-
-

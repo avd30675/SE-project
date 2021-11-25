@@ -1,0 +1,115 @@
+.userhomepage{
+    min-height: 100vh;
+    background: linear-gradient(to right top, #a1c4fd, #c2e9fb);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page{
+    background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3)
+    );
+    z-index: 2;
+    backdrop-filter: blur(2rem);
+    min-height: 80vh;
+    width: 60%;
+    border-radius:2rem;
+}
+.viewslots{
+    height:80vh;
+    width:40%;
+    float:left;
+    border-right:2px solid rgb(150, 150, 224);
+}
+.view-slot-header,.book-slot-header{
+    text-align: center;
+    font-size:3.2rem;
+    font-weight:700;
+    padding:.5rem;
+    color:rgb(105, 105, 184);
+}
+hr{
+    border-color: rgba(224, 223, 223, 0.623);
+}
+.bookslots{
+    height:80vh;
+    width:60%;
+    float:left;
+}
+.slot-page{
+    height:71vh;
+    overflow-y: scroll;
+}
+.slot-sub{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    cursor: pointer;
+}
+.slot{
+    height:20rem;
+    width:20rem;
+    margin:2rem;
+    border-radius:2rem;
+    background: linear-gradient(to left top,rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 0.5));
+    padding:1.5rem;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size:3rem;
+    font-weight:600;
+}
+.slot-font{
+    font-size:3rem;
+    font-weight:600;
+    color:rgba(26, 162, 224, 0.89);
+}
+
+
+
+
+.circle{
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.3)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+}
+.circle1{
+    top:5%;
+    left:5%;
+}
+.circle2{
+    top:50%;
+    left:23%;
+}
+.circle3{
+    top:67%;
+    left:66%;
+}
+.circle4{
+    top:-14%;
+    left:83%;
+}
+.circle5{
+    top:17%;
+    left:51%;
+}
+.circle6{
+    top:70%;
+    left:-3%;
+}
+.circle7{
+    top:33%;
+    left:82%;
+}

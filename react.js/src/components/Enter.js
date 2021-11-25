@@ -36,7 +36,8 @@ const customStyles = {
             whosigned:0,
             IsloggedIn:false,
             loginemail:'',
-            loginpassword:null
+            loginpassword:null,
+            username:''
           }
       }
       componentDidMount(){
@@ -62,11 +63,11 @@ const customStyles = {
         const loginobj={
             email:loginemail,
             password:loginpassword,
-            signed:whosigned
+            whosigned:whosigned
         }
         axios({
             method :'post',
-            url : 'http://localhost:9000/signin',
+            url : 'http://localhost:9000/login',
             headers :{'content-type':'application/json'},
             data: loginobj
         }).then(response=>{
@@ -80,7 +81,12 @@ const customStyles = {
                 }
                 event.preventDefault();
                 this.setState({signInOpen:false, IsloggedIn :response.data.autheciation});
-                sessionStorage.setItem('IsloggedIn',response.data.autheciation);
+                if(whosigned==1){
+                    this.props.history.push(`/admin`)
+                }else{
+                    sessionStorage.setItem('username',response.data.rest_string.email)
+                    this.props.history.push(`/user`)
+                }
             }else{
                 alert('user not present check your email and password');
                 this.setState({
@@ -100,8 +106,8 @@ const customStyles = {
         const {signInOpen,loginemail,loginpassword}=this.state;
           return (
                 <div>
-                    <div class="homepage">
-                        <header class="header">
+                    <div class="loginhomepage">
+                        <header class="loginheader">
                             Welcome
                         </header>
                         <div class="userlogin">

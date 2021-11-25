@@ -1,0 +1,101 @@
+.adminbookpage{
+    min-height: 100vh;
+    background: linear-gradient(to right top, #cc3e85, #6098ebea);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bookpage{
+    background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3)
+    );
+    z-index: 2;
+    backdrop-filter: blur(2rem);
+    min-height: 80vh;
+    width: 60%;
+    border-radius:2rem;
+}
+.admin-button{
+    border:none;
+    outline:none;
+    padding:1rem 2.5rem;
+    border-radius:2rem;
+    background: linear-gradient(to left top,rgba(84, 214, 208, 0.719),rgba(62, 179, 153, 0.5));
+    font-size: medium;
+    color:white;
+    cursor: pointer;
+}
+.booked-slot-list-slots{
+    border-radius:1rem;
+    background: linear-gradient(to left top,rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 0.5));
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1rem 1.5rem;
+}
+.booked-slot-list{
+    margin-top: 1rem;
+    height: 65vh;
+    overflow-y: scroll;
+}
+.booked-slot-list-items{
+    font-size: 2rem;
+    color:rgb(98, 98, 221);
+}
+.booking-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.booking-header-block,.booking-header-room{
+    font-size: 4rem;
+    margin:2rem;
+    color:rgb(106, 106, 230);
+}
+
+
+.circle{
+  background: white;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.3)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+}
+.circle1{
+    top:5%;
+    left:5%;
+}
+.circle2{
+    top:50%;
+    left:23%;
+}
+.circle3{
+    top:67%;
+    left:66%;
+}
+.circle4{
+    top:-14%;
+    left:83%;
+}
+.circle5{
+    top:17%;
+    left:51%;
+}
+.circle6{
+    top:70%;
+    left:-3%;
+}
+.circle7{
+    top:33%;
+    left:82%;
+}

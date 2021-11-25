@@ -1,25 +1,17 @@
-const ptr=require('../../../../model/adminclassroom')
+const ptr=require('../../../../model/adminguest')
 
-exports.class =(req,res)=>{
+exports.guest =(req,res)=>{
 
-    const class_id=req.body.class;
+    const hall_id=req.body.hall;
     const book_id=req.body.book;
     const b_start=req.body.start;
     const b_end=req.body.end;
     var i=1;
+    console.log(hall_id);
+    ptr.guest.findOne({_id:hall_id}).then((result)=>{
 
-    const st=new Date(b_start);
-                st.setHours(st.getHours()+5);
-                st.setMinutes(st.getMinutes()+30);
-                console.log(st);
-    const et=new Date(b_end);
-                et.setHours(et.getHours()+5);
-                et.setMinutes(et.getMinutes()+30);
-    console.log(class_id);
-    ptr.classroom.findOne({_id:class_id}).then((result)=>{
-
-            const starttime=st.getTime();
-            const endtime=et.getTime();
+            const starttime=new Date(b_start).getTime();
+            const endtime=new Date(b_end).getTime();
             
             result.bookings.forEach(element => {
                   const start=new Date(element.start).getTime();
@@ -34,15 +26,15 @@ exports.class =(req,res)=>{
              console.log(result.bookings);
           result.bookings.forEach(element => {
             if(element._id==book_id){
-               element.start=st;
-               element.end=et;
+               element.start=b_start;
+               element.end=b_end;
             }
         });
         result.save();
 
-        ptr.classbooking.findOne({_id:book_id}).then((response)=>{
-            response.start=st;
-            response.end=et;
+        ptr.guestbooking.findOne({_id:book_id}).then((response)=>{
+            response.start=b_start;
+            response.end=b_end;
             response.save();
         })
          }

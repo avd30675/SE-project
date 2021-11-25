@@ -1,0 +1,52 @@
+.admin-classroom{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.class-header{
+    font-size: 2.5rem;
+    color:rgb(99, 162, 233);
+    text-align: center;
+}
+
+.admin-create{
+
+    padding:1rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /* border-radius:2rem;
+    background: linear-gradient(to left top,rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 0.5)); */
+}
+.admin-button{
+    border:none;
+    outline:none;
+    padding:1rem 2.5rem;
+    border-radius:2rem;
+    background: linear-gradient(to left top,rgba(84, 214, 208, 0.719),rgba(62, 179, 153, 0.5));
+    font-size: medium;
+    color:white;
+    cursor: pointer;
+}
+
+.admin-class-items{
+    border-radius:1rem;
+    background: linear-gradient(to left top,rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 0.5));
+    margin-bottom: 1rem;
+}
+.admin-class-sub-items{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.scroll{
+    height:63vh;
+    overflow-y: auto;
+}
+.admin-item-block{
+    display: inline-block;
+    margin:1rem;
+}
+.admin-obj-font{
+    font-size: medium;
+    color:rgb(107, 202, 240);
+}

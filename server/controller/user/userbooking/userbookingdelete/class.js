@@ -1,7 +1,7 @@
 const ptr=require('../../../../model/adminclassroom');
 
 exports.class=(req,res)=>{
-
+    console.log(req);
     const class_id=req.body.class;
     const book_id=req.body.book;
     
@@ -22,8 +22,9 @@ exports.class=(req,res)=>{
             console.log(err);
         })
         
-        res.status(200).send("darshan");
+        res.status(200).send({deletion:1});
     }).catch((err)=>{
         console.log(err);
+        res.status(200).send({deletion:0});
     })
 }
